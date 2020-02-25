@@ -1,5 +1,102 @@
 <!DOCTYPE html>
 <html>
+    <head>
+      <title>Registro de protocolos</title>
+      <link rel="stylesheet" type="text/css" href="estilo.css"/>
+<!-- JQUERY -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+      <script>
+
+    		$(function(){
+				// Clona la fila oculta que tiene los campos base, y la agrega al final de la tabla
+				$("#adicional").on('click', function(){
+					$("#tabla tbody tr:eq(0)").clone().removeClass('fila-fija').appendTo("#tabla");
+				});
+
+				// Evento que selecciona la fila y la elimina
+				$(document).on("click",".eliminar",function(){
+					var parent = $(this).parents().get(0);
+					$(parent).remove();
+				});
+			});
+		</script>
+    </head>
+
+
     <body>
+      <header>
+      <h1 class="wrapper">Registro de protocolo</h1>
+    </header>
+<!-- INICIO DEL FORMULARIO-->
+      <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+        <fieldset>
+        <legend>Datos del Alumno</legend>
+        <p>
+          <label for="boleta">Numero de Boleta:</label>
+          <br><input type="text" class="field" id="boleta" name="boleta" maxlength="10" required/>
+        </p>
+        <p>
+          <label for="nombre">Nombre:</label>
+          <br><input type="text" class="field" id="nombre" name="nombre" required/>
+        </p>
+        <p>
+          <label for="correo">Correo:</label>
+          <br><input type="email" class="field" id="correo" name="correo" required />
+        </p>
+        <p>
+          <label for="password">Contrase&ntilde;a:</label>
+          <br><input type="password" class="field" id="password" name="password" required/>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Protocolo</legend>
+        <p>
+          <label for="nombre_p">Titulo del Protocolo:</label>
+          <input type="text" class="field" id="nombre_p" name="nombre_p" required/>
+        </p>
+        <fieldset class="Integrantes">
+            <legend class="p_c">Integrantes</legend>
+            <p> Agrega el No de Boleta y el Nombre de los demas integrantes del Protocolo.
+              Recuerda que maximo son 5 integrantes por TT.
+              (Si registraras el Protocolo de forma individual omite este paso.)
+        <table class="table bg-info"  id="tabla">
+					<tr class="fila-fija">
+						<td><input required class="field field-in" id="boleta" name="boleta" maxlength="10" placeholder="No Boleta"/></td>
+						<td><input required class="field field-in" id="nombre" name="nombre" placeholder="Nombre"/></td>
+						<td class="eliminar"><input type="button"  class="field-inb btn-green" value="Menos -"/></td>
+					</tr>
+				</table>
+        <div class="btn-der">
+            <br><p></p>
+					<button id="adicional" name="adicional" type="button" class="btn btn-warning btn-green"> Más + </button>
+
+				</div>
+            </p>
+        </fieldset>
+        <fieldset>
+          <legend class="p_c">Plabras Clave</legend>
+          <p>Debes ingresar dos Palabras cortas que describan tu protocolo.</p>
+          <p>
+            <label for="p_1">1:</label>
+            <input type="text" class="field" id="p_1" name="p_1" required/>
+          </p>
+          <p>
+            <label for="p_2">2:</label>
+            <input type="text" class="field" id="p_2" name="p_2" required/>
+          </p>
+        </fieldset>
+        <p>
+          <label for="documento">Documento:</label>
+          <input type="file" name="documento" accept=".pdf"/>
+        </p>
+      </fieldset>
+        <p class="center-content">
+          <button type="submit" class="btn btn-green">Registrar</button>
+        </p>
+      </form>
+      <br><p></p>
+      <footer>
+        <p class="pie_p wrapper">ESCOM-IPN</p>
+      </footer>
     </body>
 </html>
