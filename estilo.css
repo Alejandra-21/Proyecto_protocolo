@@ -1,0 +1,126 @@
+body{
+  background: #FFFAF0;
+}
+/*estilo del encabezado*/
+h1{
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+header{
+  width: 100%;
+  overflow: hidden;
+  background: #641E16;
+  margin-bottom: 20px;
+}
+.wrapper{
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/*pie de pagina*/
+footer{
+  width: 100%;
+  background: #641E16;
+  margin-bottom: 20px;
+}
+
+.pie_p{
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+/*formulario*/
+form{
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+}
+
+input, textarea, button{
+  outline: none;
+  border: 0;
+  width: 280px;
+}
+
+label{
+  font-family: fantasy;
+}
+/*centrar boton*/
+.center-content{
+  text-align: center;
+}
+
+/*color y tamaño de las cajas de texto*/
+.field{
+  border: solid 1px #ccc;
+  padding: 5px;
+}
+
+.field:focus{
+  border-color: #40E0D0;
+}
+
+.field-in{
+  width: 120px;
+}
+.field-inb{
+  width: 70px;
+}
+/*encabezado*/
+legend{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #191970;
+}
+.p_c{
+  font-family: fantasy;
+  text-align: left;
+  color: black;
+  font-size: 20px;
+}
+/*Color y tamaño del boton*/
+
+.btn{
+  border-radius: 3px;
+  display: inline-block;
+  padding: 15px 15px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn-green{
+  color: white;
+  background-color: #0000FF;
+}
+
+.btn-green:hover{
+  background-color: #191970;
+}
+
+.btn-green:active{
+  background-color: #4169E1;
+}
+
+/*responsivo*/
+
+@media screen and (max-width: 950px){
+    header .wrapper{
+      width: 100%;
+      text-align: center;
+      line-height: 100px;
+    }
+}
