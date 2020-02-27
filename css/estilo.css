@@ -1,0 +1,95 @@
+body { 
+    margin : 0;
+   font-family: 'Nunito', sans-serif;
+}
+
+header .contenedor{
+    display: flex;
+    justify-content: space-between; 
+    /*alinea el contenido de la etiqueta y las diferentes maneras de hacerlo son:
+    flex-start: Posiciona el texto al inicio de la pantalla
+    flex-end: Posiciona el texto al final de la pantalla
+    center: Centra el texto en la pantalla
+    space-between: Deja el mismo espacio entre las etiquetas (pegado a las orillas)
+    space-around: Mismo espacio a los lados de la etiquetas*/  
+}
+
+header ul{
+    display: flex;
+}
+
+header ul  li{
+    list-style: none;
+    margin-right: 15px;
+}
+
+a{
+    text-decoration: none; /*Quita el subrayado de vínculo*/
+}
+
+.contenedor{
+    max-width: 1280px;
+    width: 90%;
+    margin: auto;/*Centra el elemento*/
+}
+
+.contenedor img{
+    width: 90%;
+}
+
+.contenedor .texto,
+.contenedor .codigo{
+    width: 49%;
+}
+
+header{
+    background: url(../img/escom1.png);/*Es un degradado lineal sobre la imagen*/
+    height: 100vh; /*alto de encabezado*/
+    background-size: cover; /*Adapta la imagen a la pantalla*/
+}
+
+#contenedor-titulo-flex{
+    max-width: 1580px;/*El ancho máximo que el elemento puede tener*/
+    display: flex;/*Pone el texto en linea*/
+    justify-content: center;
+    margin: 18vh 0;
+    width: 100%;
+    
+}
+
+h1{
+    font-size: 25px;/*Tamaño de la fuente*/
+    color: #D9FFC4;/*Color de texto*/
+}
+
+h2{
+    font-size: 25px;
+    color: #D9FFC4;
+    text-align: center;/*Alineación del texto*/
+}
+
+.contenedor-titulo{
+    text-align: center;
+}
+
+.contenedor-titulo a, 
+#sobre-mi a,
+#blog a,
+#que-esperas a,
+#contacto input[type = "submit"]{
+    font-size: 14px;
+    color: #fff;
+    background: #f754ef;
+    padding: 14px 24px;/*Margen interior*/
+    width: 128px;
+    display: inline-block;
+}
+
+p.logo{
+    color: #fff;
+    font-size: 20px;        
+}
+
+nav ul li a{
+    color: #fff;
+}
