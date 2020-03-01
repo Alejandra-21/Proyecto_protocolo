@@ -4,9 +4,24 @@
 	<meta charset="utf-8" />
 	<title>Registro protocolo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+	<script>
+
+    		$(function(){
+				// Clona la fila oculta que tiene los campos base, y la agrega al final de la tabla
+				$("#adicional").on('click', function(){
+					$("#tabla tbody tr:eq(0)").clone().removeClass('fila-fija').appendTo("#tabla");
+				});
+
+				// Evento que selecciona la fila y la elimina
+				$(document).on("click",".eliminar",function(){
+					var parent = $(this).parents().get(0);
+					$(parent).remove();
+				});
+			});
+		</script>
 </head>
 <body class="blurBg-false" style="background-color:#a1a1a1">
-
 
 
 <!-- Start Formoid form-->
@@ -14,19 +29,32 @@
 <script type="text/javascript" src="formulario_p_files/formoid1/jquery.min.js"></script>
 <form enctype="multipart/form-data" class="formoid-solid-dark" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Registro protocolo</h2></div>
 	<div class="element-separator"><hr><h3 class="section-break-title">Datos Personales</h3></div>
-	<div class="element-name"><label class="title"></label><span class="nameFirst"><input placeholder=" Nombre" type="text" size="8" name="nombre1" /><span class="icon-place"></span></span><span class="nameLast"><input placeholder=" Apellidos" type="text" size="14" name="apellidos1" /><span class="icon-place"></span></span></div>
 	<div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="boleta1" placeholder="Boleta"/><span class="icon-place"></span></div></div>
+	<div class="element-name"><label class="title"></label><div class="item-cont"><input placeholder=" Nombre" type="text" size="20" name="nombre1"/><span class="icon-place"></span></div></div>
 	<div class="element-email"><label class="title"></label><div class="item-cont"><input class="large" type="email" name="email" value="" placeholder="Email"/><span class="icon-place"></span></div></div>
 	<div class="element-password"><label class="title"></label><div class="item-cont"><input class="large" type="password" name="password" value="" placeholder="Contraseña"/><span class="icon-place"></span></div></div>
 	<div class="element-separator"><hr><h3 class="section-break-title">Protocolo</h3></div>
-    <div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="titulo" placeholder="Titulo del protocolo"/><span class="icon-place"></span></div></div>
+  <div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="titulo" placeholder="Titulo del protocolo"/><span class="icon-place"></span></div></div>
 	<div class="element-file"><label class="title"></label><div class="item-cont"><label class="large" ><div class="button">Hecho</div><input type="file" class="file_input" name="file" /><div class="file_text">Selecciona un archivo</div><span class="icon-place"></span></label></div></div>
 	<div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="pc1" placeholder="Palabras clave"/><span class="icon-place"></span></div></div>
 	<div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="pc2" placeholder="Palabras clave"/><span class="icon-place"></span></div></div>
 	<div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="pc3" placeholder="Palabras clave"/><span class="icon-place"></span></div></div>
 	<div class="element-separator"><hr><h3 class="section-break-title">Integrantes</h3></div>
-            <div class="element-name"><label class="title"></label><span class="nameFirst"><input placeholder=" Nombre" type="text" size="8" name="nombre2" /><span class="icon-place"></span></span><span class="nameLast"><input placeholder=" Apellido" type="text" size="14" name="apellido2" /><span class="icon-place"></span></span></div>
-           <div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="boleta2" placeholder="Boleta"/><span class="icon-place"></span></div></div>
+<!--clone-->
+<div>
+<table class="table bg-info"  id="tabla">
+					<tr class="fila-fija">
+						<td><div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="boleta1" placeholder="No Boleta"/><span class="icon-place"></span></div></div></td>
+						<td><div class="element-name"><label class="title"></label><div class="item-cont"><input placeholder=" Nombre" type="text" size="20" name="nombre1"/><span class="icon-place"></span></div></div></td>
+						<td class="eliminar"><div class="element-input"><label class="large" ><div class="button">Eliminar</div></label></div></td>
+					</tr>
+				</table>
+	<div class="btn-der">
+            <br><p></p>
+					<button id="adicional" name="adicional" type="button" class="btn btn-warning btn-green"> Más + </button>
+
+				</div>
+			</div>
 <div class="submit"><input type="submit" value="Registrarse"/></div></form><p class="frmd"><a href="http://formoid.com/v29.php">jquery form</a> Formoid.com 2.9</p><script type="text/javascript" src="formulario_p_files/formoid1/formoid-solid-dark.js"></script>
 <!-- Stop Formoid form-->
 
