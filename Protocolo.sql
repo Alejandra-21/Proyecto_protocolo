@@ -20,7 +20,7 @@ USE `Protocolo` ;
 -- -----------------------------------------------------
 -- Table `Protocolo`.`Protocolo`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Protocolo`.`Protocolo` (
+CREATE TABLE IF NOT EXISTS `Protocolo`.`Protocolo1` (
   `no_registro` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `ruta_pdf` VARCHAR(255) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `Protocolo`.`Alumno` (
   INDEX `no_registro_idx` (`no_registro` ASC),
   CONSTRAINT `no_registro_a`
     FOREIGN KEY (`no_registro`)
-    REFERENCES `Protocolo`.`Protocolo` (`no_registro`)
+    REFERENCES `Protocolo`.`Protocolo1` (`no_registro`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `Protocolo`.`Evalua` (
   INDEX `idProfesor_idx` (`idProfesor` ASC),
   CONSTRAINT `no_registro_e`
     FOREIGN KEY (`no_registro`)
-    REFERENCES `Protocolo`.`Protocolo` (`no_registro`)
+    REFERENCES `Protocolo`.`Protocolo1` (`no_registro`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `idProfesor_e`
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `Protocolo`.`Palabras_clave` (
   INDEX `no_registro_ind` (`no_registro` ASC),
   CONSTRAINT `no_registro_p`
     FOREIGN KEY (`no_registro`)
-    REFERENCES `Protocolo`.`Protocolo` (`no_registro`)
+    REFERENCES `Protocolo`.`Protocolo1` (`no_registro`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -143,7 +143,7 @@ ENGINE = InnoDB;
 insert into profesor values (1,"LOPEZ CARRERA BENJAMIN", "LCB1_", "LCB1_");
 insert into profesor values (2,"VAZQUEZ ARREGUIN ROBERTO", "VAR2_", "VAR2_");
 insert into profesor values (3,"TELLEZ REYES MARIA DEL SOCORRO", "TRMS3_", "TRMS3_");
-insert into profesor values (4,"SUAREZ CASTAÑON MIGUEL SANTIAGO", "SCMS4_", "SCMS4_");
+insert into profesor values (4,"SUAREZ CASTANON MIGUEL SANTIAGO", "SCMS4_", "SCMS4_");
 insert into profesor values (5,"CHAVEZ LIMA EDUARDO", "CLE5_", "CLE5_");
 insert into profesor values (6,"DORANTES VILLA CLAUDIA JISELA", "DVCJ6_", "DVCJ6_");
 insert into profesor values (7,"PEREZ VERA MONSERRAT GABRIELA", "PVMG7_", "PVMG7_");
