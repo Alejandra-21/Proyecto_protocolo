@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `Protocolo`.`Alumno` (
   `nombre` VARCHAR(45) NOT NULL,
   `correo` VARCHAR(45),
   `password` VARCHAR(45),
-  `no_registro` INT NOT NULL AUTO_INCREMENT,
+  `no_registro` ,
   PRIMARY KEY (`boleta`),
   INDEX `no_registro_idx` (`no_registro` ASC),
   CONSTRAINT `no_registro_a`
