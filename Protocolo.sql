@@ -21,7 +21,7 @@ USE `Protocolo` ;
 -- Table `Protocolo`.`Protocolo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Protocolo`.`Protocolo1` (
-  `no_registro` INT NOT NULL AUTO_INCREMENT,
+  `no_registro` VARCHAR(15) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `ruta_pdf` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`no_registro`),
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `Protocolo`.`Alumno` (
   `nombre` VARCHAR(45) NOT NULL,
   `correo` VARCHAR(45),
   `password` VARCHAR(45),
-  `no_registro` ,
+  `no_registro` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`boleta`),
   INDEX `no_registro_idx` (`no_registro` ASC),
   CONSTRAINT `no_registro_a`
@@ -103,7 +103,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Protocolo`.`Evalua` (
   `idEvalua` INT NOT NULL,
-  `no_registro` INT NOT NULL AUTO_INCREMENT,
+  `no_registro` VARCHAR(15) NOT NULL,
   `idProfesor` INT(10) NOT NULL,
   `ruta_pdf_eval` VARCHAR(45) NOT NULL,
   `status` VARCHAR(45) NOT NULL,
@@ -127,8 +127,10 @@ ENGINE = InnoDB;
 -- Table `Protocolo`.`Palabras_clave`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Protocolo`.`Palabras_clave` (
-  `no_registro` INT NOT NULL AUTO_INCREMENT,
-  `palabra` VARCHAR(45) NOT NULL,
+  `no_registro` VARCHAR(15) NOT NULL,
+  `p1` VARCHAR(45) NOT NULL,
+  `p2` VARCHAR(45) NOT NULL,
+  `p3` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`no_registro`),
   INDEX `no_registro_ind` (`no_registro` ASC),
   CONSTRAINT `no_registro_p`
